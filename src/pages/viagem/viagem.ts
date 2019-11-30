@@ -6,6 +6,7 @@ import { AlertController } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import {AnotacoesPage} from '../anotacoes/anotacoes';
 import { ToastController } from 'ionic-angular';
+import { AlterarViagemPage} from '../alterar-viagem/alterar-viagem';
 
 @IonicPage()
 @Component({
@@ -67,9 +68,8 @@ export class ViagemPage {
         },
         {
           text: 'Editar',
-          role: 'cancel',
           handler: () => {
-            
+            this.navCtrl.push(AlterarViagemPage);
           }
         }
       ]

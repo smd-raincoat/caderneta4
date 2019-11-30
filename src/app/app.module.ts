@@ -19,6 +19,7 @@ import { DocumentViewer } from '@ionic-native/document-viewer';
 import { File } from '@ionic-native/file';
 import { MaterialDeApoioPage } from '../pages/material-de-apoio/material-de-apoio';
 import { AnotacoesPage } from '../pages/anotacoes/anotacoes';
+import {AlterarViagemPage} from '../pages/alterar-viagem/alterar-viagem';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AnotacoesPage } from '../pages/anotacoes/anotacoes';
     CadastroAnotacaoPage,
     AnotacaoPage,
     MaterialDeApoioPage,
-    AnotacoesPage
+    AnotacoesPage,
+    AlterarViagemPage
   ],
   imports: [
     BrowserModule,
@@ -52,7 +54,8 @@ import { AnotacoesPage } from '../pages/anotacoes/anotacoes';
     CadastroAnotacaoPage,
     AnotacaoPage,
     MaterialDeApoioPage,
-    AnotacoesPage
+    AnotacoesPage,
+    AlterarViagemPage
   ],
   providers: [
     StatusBar,
