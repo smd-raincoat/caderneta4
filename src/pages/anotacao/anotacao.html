@@ -6,7 +6,7 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>Anotação</ion-title>
+    <ion-title>Ponto:{{anotacao.titulo}}</ion-title>
     <img class="delete" src="assets/imgs/lixoo.png" (click)="apagarAnotacao()">
   </ion-navbar>
 </ion-header>
@@ -14,12 +14,18 @@
 <ion-content padding>
   <div class="slide">
     
+    <ion-label><b>Título:</b></ion-label>
+    <ion-label>{{anotacao.titulo}}</ion-label>
     <ion-label><b>Data:</b></ion-label>
     <ion-label>{{anotacao.data}}</ion-label>
     <ion-label><b>Hora:</b></ion-label>
     <ion-label>{{anotacao.hora}}</ion-label>
-    <ion-label><b>Coordenadas:</b></ion-label>
-    <ion-label>{{anotacao.coordenada}}</ion-label>
+    <ion-label><b>Coordenada X:</b></ion-label>
+    <ion-label>{{anotacao.coordenadaX}}</ion-label>
+    <ion-label><b>Coordenada Y:</b></ion-label>
+    <ion-label>{{anotacao.coordenadaY}}</ion-label>
+    <ion-label><b>Altitude:</b></ion-label>
+    <ion-label>{{anotacao.altitude}}</ion-label>
     <ion-label><b>Texto:</b></ion-label>
     <ion-label>{{anotacao.texto}}</ion-label>
   </div>

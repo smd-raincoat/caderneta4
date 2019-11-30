@@ -6,17 +6,17 @@
 -->
 <ion-header>
   <ion-navbar>
-    <ion-title>anotacoes</ion-title>
+    <ion-title>Pontos</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
     <div padding>
-        <button ion-button block (click)="goCadastroAnotacaoPage()">Criar anotação</button>
+        <button ion-button block (click)="goCadastroAnotacaoPage()">Criar ponto</button>
       </div>
   
       <div padding *ngFor="let anotacao of anotacoes; let i = index">
-        <button ion-button block (click)="goAnotacaoPage(i)">Anotacao {{ i + 1}}</button>
+        <button ion-button block (click)="goAnotacaoPage(i)">Ponto {{ i + 1}}<br>{{anotacao.titulo}}</button>
       </div>
 
 </ion-content>

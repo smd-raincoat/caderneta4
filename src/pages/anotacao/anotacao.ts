@@ -51,8 +51,8 @@ export class AnotacaoPage {
 
   apagarAnotacao(){
     let alert = this.alertCtrl.create({
-      title: 'Apagar Anotação!',
-      message: 'Você deseja mesmo apagar essa anotação?',
+      title: 'Apagar Ponto!',
+      message: 'Você deseja mesmo apagar esse ponto?',
       buttons: [
         {
           text: 'Cancelar',

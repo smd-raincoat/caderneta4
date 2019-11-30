@@ -19,9 +19,12 @@ export class CadastroAnotacaoPage {
   [x: string]: any;
   
   public cadastroForm = {
+    titulo:"",
     data:"",
     hora:"",
-    coordenadas:"",
+    coordenadaX:"",
+    coordenadaY:"",
+    altitude:"",
     texto:"",
     imagem:""
   }
@@ -31,26 +34,35 @@ export class CadastroAnotacaoPage {
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.cadastroForm = {
+      titulo:"",
       data:"",
       hora:"",
-      coordenadas:"",
+      coordenadaX:"",
+      coordenadaY:"",
+      altitude:"",
       texto:"",
       imagem:"",
     }
     this.viagens = localStorage.getItem('viagens');
     
   }
-  setData(data: string, hora: string, coordenadas: string, texto: string){
+  setData(data: string, hora: string, coordenadas: string, texto: string, titulo:string, coordenadaX: string, coordenadaY:string, altitude: string){
     let cadastroForm = {
+      titulo:"",
       data:"",
       hora:"",
-      coordenadas:"",
+      coordenadaX:"",
+      coordenadaY:"",
+      altitude:"",
       texto:"",
       imagem:"",
     } 
+    cadastroForm.titulo = titulo;
     cadastroForm.data = data;
     cadastroForm.hora = hora;
-    cadastroForm.coordenadas = coordenadas;
+    cadastroForm.coordenadaX = coordenadaX;
+    cadastroForm.coordenadaY = coordenadaY;
+    cadastroForm.altitude = altitude;
     cadastroForm.texto = texto;
 
   }

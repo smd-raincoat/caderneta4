@@ -16,7 +16,14 @@
    
         <div padding class="slide">
     <form (ngSubmit)="logForm()">
-        <h1>Criar viagem</h1>
+
+        <h1>Criar ponto</h1>
+
+        <ion-item>
+          <ion-label floating>Título</ion-label>
+          <ion-textarea [(ngModel)]="cadastroForm.titulo" name="titulo"></ion-textarea>
+        </ion-item>
+
         <ion-item>
           <ion-label floating>Data</ion-label>
           <ion-datetime displayFormat = "DD MMM YYYY" [(ngModel)]="cadastroForm.data" name="data"></ion-datetime>
@@ -28,8 +35,18 @@
         </ion-item>
   
         <ion-item>
-          <ion-label floating>Coordenadas</ion-label>
-          <ion-input type="text" [(ngModel)]="cadastroForm.coordendas" name="coordenadas"></ion-input>
+          <ion-label floating>Coordenada X</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroForm.coordenadaX" name="coordenadaX"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Coordenada Y</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroForm.coordenadaY" name="coordenadaY"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Altitude</ion-label>
+          <ion-input type="text" [(ngModel)]="cadastroForm.altitude" name="altitude"></ion-input>
         </ion-item>
   
         <ion-item>

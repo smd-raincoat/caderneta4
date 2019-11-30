@@ -6,7 +6,7 @@ webpackJsonp([8],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,7 +65,7 @@ var AddPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnotacoesPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_anotacao_cadastro_anotacao__ = __webpack_require__(103);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__anotacao_anotacao__ = __webpack_require__(51);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -115,7 +115,7 @@ var AnotacoesPage = /** @class */ (function () {
     };
     AnotacoesPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-anotacoes',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacoes\anotacoes.html"*/'<!--\n  Generated template for the AnotacoesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>anotacoes</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div padding>\n        <button ion-button block (click)="goCadastroAnotacaoPage()">Criar anotação</button>\n      </div>\n  \n      <div padding *ngFor="let anotacao of anotacoes; let i = index">\n        <button ion-button block (click)="goAnotacaoPage(i)">Anotacao {{ i + 1}}</button>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacoes\anotacoes.html"*/,
+            selector: 'page-anotacoes',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacoes\anotacoes.html"*/'<!--\n  Generated template for the AnotacoesPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Pontos</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <div padding>\n        <button ion-button block (click)="goCadastroAnotacaoPage()">Criar ponto</button>\n      </div>\n  \n      <div padding *ngFor="let anotacao of anotacoes; let i = index">\n        <button ion-button block (click)="goAnotacaoPage(i)">Ponto {{ i + 1}}<br>{{anotacao.titulo}}</button>\n      </div>\n\n</ion-content>\n'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacoes\anotacoes.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], AnotacoesPage);
@@ -132,7 +132,7 @@ var AnotacoesPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroAnotacaoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -155,32 +155,44 @@ var CadastroAnotacaoPage = /** @class */ (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.cadastroForm = {
+            titulo: "",
             data: "",
             hora: "",
-            coordenadas: "",
+            coordenadaX: "",
+            coordenadaY: "",
+            altitude: "",
             texto: "",
             imagem: ""
         };
         this.cadastroForm = {
+            titulo: "",
             data: "",
             hora: "",
-            coordenadas: "",
+            coordenadaX: "",
+            coordenadaY: "",
+            altitude: "",
             texto: "",
             imagem: "",
         };
         this.viagens = localStorage.getItem('viagens');
     }
-    CadastroAnotacaoPage.prototype.setData = function (data, hora, coordenadas, texto) {
+    CadastroAnotacaoPage.prototype.setData = function (data, hora, coordenadas, texto, titulo, coordenadaX, coordenadaY, altitude) {
         var cadastroForm = {
+            titulo: "",
             data: "",
             hora: "",
-            coordenadas: "",
+            coordenadaX: "",
+            coordenadaY: "",
+            altitude: "",
             texto: "",
             imagem: "",
         };
+        cadastroForm.titulo = titulo;
         cadastroForm.data = data;
         cadastroForm.hora = hora;
-        cadastroForm.coordenadas = coordenadas;
+        cadastroForm.coordenadaX = coordenadaX;
+        cadastroForm.coordenadaY = coordenadaY;
+        cadastroForm.altitude = altitude;
         cadastroForm.texto = texto;
     };
     CadastroAnotacaoPage.prototype.logForm = function () {
@@ -200,7 +212,7 @@ var CadastroAnotacaoPage = /** @class */ (function () {
     };
     CadastroAnotacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-cadastro-anotacao',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\cadastro-anotacao\cadastro-anotacao.html"*/'<!--\n  Generated template for the CadastroAnotacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n      <ion-title style="padding-left: 70px;">\n          <div  class="toolbar-title-toolbar-title-md" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-md">Nova Viagem</div>\n        </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n   \n        <div padding class="slide">\n    <form (ngSubmit)="logForm()">\n        <h1>Criar viagem</h1>\n        <ion-item>\n          <ion-label floating>Data</ion-label>\n          <ion-datetime displayFormat = "DD MMM YYYY" [(ngModel)]="cadastroForm.data" name="data"></ion-datetime>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Hora</ion-label>\n          <ion-datetime displayFormat="h:mm A" pickerFormat = "h mm a" [(ngModel)]="cadastroForm.hora" name="hora"></ion-datetime>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Coordenadas</ion-label>\n          <ion-input type="text" [(ngModel)]="cadastroForm.coordendas" name="coordenadas"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Texto</ion-label>\n          <ion-textarea rows = "10" cols = "20" [(ngModel)]="cadastroForm.texto" name="texto"></ion-textarea>\n        </ion-item>\n  \n        <button ion-button block type="submit" (click) = "goViagem()">Seguir</button>\n      \n      </form>\n        </div>\n    \n</ion-content>\n'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\cadastro-anotacao\cadastro-anotacao.html"*/,
+            selector: 'page-cadastro-anotacao',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\cadastro-anotacao\cadastro-anotacao.html"*/'<!--\n  Generated template for the CadastroAnotacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n      <ion-title style="padding-left: 70px;">\n          <div  class="toolbar-title-toolbar-title-md" ng-reflect-klass="toolbar-title" ng-reflect-ng-class="toolbar-title-md">Nova Viagem</div>\n        </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n   \n        <div padding class="slide">\n    <form (ngSubmit)="logForm()">\n\n        <h1>Criar ponto</h1>\n\n        <ion-item>\n          <ion-label floating>Título</ion-label>\n          <ion-textarea [(ngModel)]="cadastroForm.titulo" name="titulo"></ion-textarea>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Data</ion-label>\n          <ion-datetime displayFormat = "DD MMM YYYY" [(ngModel)]="cadastroForm.data" name="data"></ion-datetime>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Hora</ion-label>\n          <ion-datetime displayFormat="h:mm A" pickerFormat = "h mm a" [(ngModel)]="cadastroForm.hora" name="hora"></ion-datetime>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Coordenada X</ion-label>\n          <ion-input type="text" [(ngModel)]="cadastroForm.coordenadaX" name="coordenadaX"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Coordenada Y</ion-label>\n          <ion-input type="text" [(ngModel)]="cadastroForm.coordenadaY" name="coordenadaY"></ion-input>\n        </ion-item>\n\n        <ion-item>\n          <ion-label floating>Altitude</ion-label>\n          <ion-input type="text" [(ngModel)]="cadastroForm.altitude" name="altitude"></ion-input>\n        </ion-item>\n  \n        <ion-item>\n          <ion-label floating>Texto</ion-label>\n          <ion-textarea rows = "10" cols = "20" [(ngModel)]="cadastroForm.texto" name="texto"></ion-textarea>\n        </ion-item>\n  \n        <button ion-button block type="submit" (click) = "goViagem()">Seguir</button>\n      \n      </form>\n        </div>\n    \n</ion-content>\n'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\cadastro-anotacao\cadastro-anotacao.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]])
     ], CadastroAnotacaoPage);
@@ -217,7 +229,7 @@ var CadastroAnotacaoPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CadastroViagemPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -310,7 +322,7 @@ var CadastroViagemPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChecklistPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__add_add__ = __webpack_require__(101);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -370,7 +382,7 @@ var ChecklistPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MaterialDeApoioPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_document_viewer__ = __webpack_require__(159);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_file__ = __webpack_require__(161);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -437,7 +449,7 @@ var MaterialDeApoioPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ViagemPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__anotacao_anotacao__ = __webpack_require__(51);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__anotacoes_anotacoes__ = __webpack_require__(102);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -543,12 +555,11 @@ var ViagemPage = /** @class */ (function () {
     };
     ViagemPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-viagem',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\viagem\viagem.html"*/'<ion-header>\n  <ion-navbar class="side" color="secondary">\n    <ion-title style="margin-top: 20px;">{{viagem.titulo}}</ion-title>\n    <img class="delete" style="margin-left: 250px; margin-top:-60px;" src="assets/imgs/lixoo.png" (click)="apagarViagem()">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding class="slide">\n    <div padding>\n\n    </div>\n    <div padding>\n      <button ion-button block (click)="verDados()">Informações da viagem</button>\n    </div>\n    \n\n    <div padding>\n      <button ion-button block (click)="goAnotacoesPage()">Anotações</button>\n    </div>\n\n    <div padding>\n        <button ion-button block (click)="alerta()">Galeria</button>\n    </div>\n\n    <div padding>\n        <button ion-button block (click)="alerta()">Anexos</button>\n    </div>\n\n  </div>\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\viagem\viagem.html"*/,
+            selector: 'page-viagem',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\viagem\viagem.html"*/'<ion-header>\n  <ion-navbar class="side" color="secondary">\n    <ion-title style="margin-top: 20px;">{{viagem.titulo}}</ion-title>\n    <img class="delete" style="margin-left: 250px; margin-top:-60px;" src="assets/imgs/lixoo.png" (click)="apagarViagem()">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n\n  <div padding class="slide">\n    <div padding>\n\n    </div>\n    <div padding>\n      <button ion-button block (click)="verDados()">Informações da viagem</button>\n    </div>\n    \n\n    <div padding>\n      <button ion-button block (click)="goAnotacoesPage()">Pontos</button>\n    </div>\n\n    <div padding>\n        <button ion-button block (click)="alerta()">Galeria</button>\n    </div>\n\n    <div padding>\n        <button ion-button block (click)="alerta()">Anexos</button>\n    </div>\n\n  </div>\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\viagem\viagem.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], ViagemPage);
     return ViagemPage;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=viagem.js.map
@@ -631,7 +642,7 @@ module.exports = webpackAsyncContext;
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__cadastro_viagem_cadastro_viagem__ = __webpack_require__(104);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__viagem_viagem__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -704,7 +715,7 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(277);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(278);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(203);
@@ -816,7 +827,7 @@ var AppModule = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(203);
@@ -919,7 +930,7 @@ var dataProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -976,7 +987,7 @@ var ListPage = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AnotacaoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(9);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -989,6 +1000,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 /**
  * Generated class for the AnotacaoPage page.
  *
@@ -996,10 +1008,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var AnotacaoPage = /** @class */ (function () {
-    function AnotacaoPage(navCtrl, navParams, alertCtrl) {
+    function AnotacaoPage(navCtrl, navParams, alertCtrl, toastController) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.alertCtrl = alertCtrl;
+        this.toastController = toastController;
         this.viagens = localStorage.getItem('viagens');
         this.viagens = JSON.parse(this.viagens);
         this.indexViagem = localStorage.getItem('indexViagem');
@@ -1013,11 +1026,18 @@ var AnotacaoPage = /** @class */ (function () {
     AnotacaoPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad AnotacaoPage');
     };
+    AnotacaoPage.prototype.alerta = function () {
+        var toast = this.toastController.create({
+            message: 'Função ainda não disponível',
+            duration: 2000
+        });
+        toast.present();
+    };
     AnotacaoPage.prototype.apagarAnotacao = function () {
         var _this = this;
         var alert = this.alertCtrl.create({
-            title: 'Apagar Anotação!',
-            message: 'Você deseja mesmo apagar essa anotação?',
+            title: 'Apagar Ponto!',
+            message: 'Você deseja mesmo apagar esse ponto?',
             buttons: [
                 {
                     text: 'Cancelar',
@@ -1040,9 +1060,9 @@ var AnotacaoPage = /** @class */ (function () {
     };
     AnotacaoPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-anotacao',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacao\anotacao.html"*/'<!--\n  Generated template for the AnotacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Anotação</ion-title>\n    <img class="delete" src="assets/imgs/lixoo.png" (click)="apagarAnotacao()">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="slide">\n    \n    <ion-label><b>Data:</b></ion-label>\n    <ion-label>{{anotacao.data}}</ion-label>\n    <ion-label><b>Hora:</b></ion-label>\n    <ion-label>{{anotacao.hora}}</ion-label>\n    <ion-label><b>Coordenadas:</b></ion-label>\n    <ion-label>{{anotacao.coordenada}}</ion-label>\n    <ion-label><b>Texto:</b></ion-label>\n    <ion-label>{{anotacao.texto}}</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacao\anotacao.html"*/,
+            selector: 'page-anotacao',template:/*ion-inline-start:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacao\anotacao.html"*/'<!--\n  Generated template for the AnotacaoPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar>\n    <ion-title>Ponto:{{anotacao.titulo}}</ion-title>\n    <img class="delete" src="assets/imgs/lixoo.png" (click)="apagarAnotacao()">\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="slide">\n    \n    <ion-label><b>Título:</b></ion-label>\n    <ion-label>{{anotacao.titulo}}</ion-label>\n    <ion-label><b>Data:</b></ion-label>\n    <ion-label>{{anotacao.data}}</ion-label>\n    <ion-label><b>Hora:</b></ion-label>\n    <ion-label>{{anotacao.hora}}</ion-label>\n    <ion-label><b>Coordenada X:</b></ion-label>\n    <ion-label>{{anotacao.coordenadaX}}</ion-label>\n    <ion-label><b>Coordenada Y:</b></ion-label>\n    <ion-label>{{anotacao.coordenadaY}}</ion-label>\n    <ion-label><b>Altitude:</b></ion-label>\n    <ion-label>{{anotacao.altitude}}</ion-label>\n    <ion-label><b>Texto:</b></ion-label>\n    <ion-label>{{anotacao.texto}}</ion-label>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Users\Familia Oliveira\Desktop\cn-master\src\pages\anotacao\anotacao.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* ToastController */]])
     ], AnotacaoPage);
     return AnotacaoPage;
 }());
