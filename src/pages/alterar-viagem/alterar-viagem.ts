@@ -42,8 +42,10 @@ export class AlterarViagemPage {
       titulo: '',
       data:'',
       cidade:'',
-      partida:'',
-      retorno:'',
+      partidaData:'',
+      partidaHora:'',
+      retornoData:'',
+      retornoHora:'',
       observacoes:'',
       anotacoes:[]
     }
@@ -89,7 +91,7 @@ export class AlterarViagemPage {
     this.indexViagem = localStorage.getItem('indexViagem'); 
     this.cadastroForm.titulo = this.viagens[this.indexViagem].titulo;
     this.cadastroForm.data = this.viagens[this.indexViagem].data;
-    this.cadastroForm.cidade = this.viagens[this.indexViagem].hora;
+    this.cadastroForm.cidade = this.viagens[this.indexViagem].cidade;
     this.cadastroForm.partidaData = this.viagens[this.indexViagem].partidaData;
     this.cadastroForm.partidaHora = this.viagens[this.indexViagem].partidaHora;
     this.cadastroForm.retornoData = this.viagens[this.indexViagem].retornoData;
@@ -99,6 +101,7 @@ export class AlterarViagemPage {
   }
 
   goHome(){
+    this.navCtrl.pop();
     this.navCtrl.pop();
   }
 

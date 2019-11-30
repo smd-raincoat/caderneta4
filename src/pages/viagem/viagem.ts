@@ -33,6 +33,7 @@ export class ViagemPage {
   }
 
   ionViewWillEnter() {
+    this.indexViagem = localStorage.getItem('indexViagem');
     this.viagens = JSON.parse(localStorage.getItem("viagens"));
     this.anotacoes = this.viagens[this.indexViagem].anotacoes;
   }
